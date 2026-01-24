@@ -3,7 +3,7 @@
 **Transform Claude Code into your strategic PM thinking partner through an open-source framework for evidence-based product decisions.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/[username]/pm-copilot-template)
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/mia-mcmillan/pm-copilot-template)
 
 ---
 
@@ -56,7 +56,7 @@ PM Copilot V1.0 is a comprehensive framework that turns Claude Code into an acti
 
 ### 1. Clone & Open
 ```bash
-git clone https://github.com/[username]/pm-copilot-template.git
+git clone https://github.com/mia-mcmillan/pm-copilot-template.git
 cd pm-copilot-template
 
 # Open in Obsidian (recommended) or any markdown editor
@@ -267,8 +267,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - **Examples Gallery**: See how others adapted the framework
 
 ### Issues & Bugs
-- **Report Issues**: [GitHub Issues](https://github.com/[username]/pm-copilot-template/issues)
-- **Feature Requests**: [GitHub Discussions](https://github.com/[username]/pm-copilot-template/discussions)
+- **Report Issues**: [GitHub Issues](https://github.com/mia-mcmillan/pm-copilot-template/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/mia-mcmillan/pm-copilot-template/discussions)
 
 ---
 
@@ -288,13 +288,16 @@ Created by [Mia McMillan](https://www.linkedin.com/in/miamcmillan/) - Product Ma
 **Inspiration**:
 
 Videos that sparked the vision for this framework:
-- [Building a Second Brain with Claude - Tiago Forte](https://youtu.be/4nthc76rSl8?si=imwByMEVcK-bm927)
-- [AI as Your Strategic Thinking Partner](https://youtu.be/oBho3hZ7MHM?si=4lgiitW8Y1lrFIRH)
-- [Product Management with AI Copilots](https://youtu.be/rwmR7m5rvqw?si=trWycZ90K9-WHDAZ)
+- [Carlo Vellotti's Claude Code Tutorial on Aakash Gupta's Product Growth Podcast ](https://www.youtube.com/watch?v=4nthc76rSl8)
+- [Teresa Torres's Claude Code for PMs on Claire Vo's How I AI Podcast](https://www.youtube.com/watch?v=oBho3hZ7MHM)
+- [Dennis Yang's Cursor for PMs on Claire Vo's How I AI Podcaast](https://www.youtube.com/watch?v=rwmR7m5rvqw)
 
 **Special Thanks**:
 - Anthropic team for Claude Code and the Claude Agent SDK
-- PM community for feedback and inspiration
+- Matillion for encouraging AI experimentation
+- Claire Vo's How I AI Podcast
+- Aakash Gupta's Product Growth Podcast
+- Lenny Ratchitsky's Lenny's Podcast
 
 ---
 
@@ -308,15 +311,10 @@ Videos that sparked the vision for this framework:
 
 ### V1.1 (Planned)
 - [ ] Additional coaching modes (Research Mode, Review Mode)
-- [ ] More domain adaptations (SaaS, Hardware, Healthcare)
 - [ ] Video walkthrough and tutorials
-- [ ] Community examples gallery
 
-### V2.0 (Future)
-- [ ] Multi-product workspace support
-- [ ] Advanced analytics and reporting
-- [ ] Custom coaching pattern builder
-- [ ] Integration with more tools (Linear, Notion, Figma)
+### V2.0 (Ideas welcome!)
+
 
 ---
 
