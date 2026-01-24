@@ -1,0 +1,49 @@
+# Claude Code Ignore - Exclude from indexing to improve performance
+
+# Version Control
+.git/
+.github/
+
+# Dependencies (if any)
+node_modules/
+venv/
+.venv/
+__pycache__/
+
+# Obsidian (if you add it later)
+.obsidian/
+.obsidian-backup/
+
+# Exports and Large Data Files
+# Uncomment if these slow down indexing:
+# 1-collect/exports/
+# 1-collect/usage-data/
+# *.csv
+# *.sql
+# *.sqlite
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Media files (usually don't need code analysis)
+# *.mp4
+# *.mov
+# *.mp3
+# *.wav
+
+# Archive directory (if you want to exclude old work)
+# archive/
+# _archive/

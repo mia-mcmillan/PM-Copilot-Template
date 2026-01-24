@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "gong": {
+      "command": "node",
+      "args": [
+        "/path/to/your/mcp-servers/gong/server.js"
+      ],
+      "env": {
+        "GONG_ACCESS_KEY": "${GONG_API_KEY}",
+        "GONG_ACCESS_KEY_SECRET": "${GONG_API_SECRET}",
+        "GONG_BASE_URL": "${GONG_API_BASE_URL}"
+      },
+      "comment": "Environment variables are loaded from AWS Secrets Manager or .env file. See docs/Getting-Started.md"
+    },
+    "snowflake": {
+      "command": "node",
+      "args": [
+        "/path/to/your/mcp-servers/snowflake/server.js"
+      ],
+      "env": {
+        "SNOWFLAKE_ACCOUNT": "${SNOWFLAKE_ACCOUNT}",
+        "SNOWFLAKE_USER": "${SNOWFLAKE_USER}",
+        "SNOWFLAKE_WAREHOUSE": "${SNOWFLAKE_WAREHOUSE}",
+        "SNOWFLAKE_DATABASE": "${SNOWFLAKE_DATABASE}"
+      },
+      "comment": "Optional: Configure if you have Snowflake data warehouse access"
+    },
+    "gdrive": {
+      "command": "node",
+      "args": [
+        "/path/to/your/mcp-servers/gdrive/server.js"
+      ],
+      "comment": "Optional: Configure for Google Drive integration"
+    }
+  }
+}

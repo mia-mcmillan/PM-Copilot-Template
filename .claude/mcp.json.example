@@ -1,0 +1,113 @@
+{
+  "_comment": "MCP Server Configuration Template - For documentation purposes only",
+  "_instructions": [
+    "**RECOMMENDED SETUP**: Configure MCP servers globally instead of per-project",
+    "1. Edit your global config: ~/.config/claude-code/mcp_config.json",
+    "2. Add the servers below to the 'mcpServers' object with your credentials",
+    "3. All servers will be available in all Claude Code sessions",
+    "4. Use /toggle-mcp to enable/disable servers per project as needed",
+    "5. See docs/Getting-Started.md for setup guides for each MCP server",
+    "",
+    "**ALTERNATIVE**: Project-level config (not recommended for multiple workspaces)",
+    "- Copy this file: cp .claude/mcp.json.example .claude/mcp.json",
+    "- Add your credentials to the new mcp.json file",
+    "- mcp.json is gitignored and won't be committed"
+  ],
+  "mcpServers": {
+    "atlassian": {
+      "_description": "Atlassian MCP - Jira Product Discovery, Jira, Confluence integration",
+      "_setup": "Visit https://mcp.atlassian.com to authenticate and get your SSE URL",
+      "url": "https://mcp.atlassian.com/v1/sse",
+      "transport": "sse"
+    },
+    "pendo": {
+      "_description": "Pendo MCP - Product analytics and usage data",
+      "_setup": "Visit https://support.pendo.io/hc/en-us/articles/41102236924955 for setup instructions",
+      "_note": "Use regional URL: https://app.pendo.io (US) or https://app.eu.pendo.io (EU)",
+      "url": "https://app.eu.pendo.io/mcp/v0/shttp",
+      "transport": "sse"
+    },
+    "n8n-mcp": {
+      "_description": "n8n workflow automation - trigger and monitor workflows",
+      "_setup": "Get API key from your n8n instance: Settings > API > Create API Key",
+      "command": "npx",
+      "args": ["-y", "n8n-mcp"],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "https://your-n8n-instance.app.n8n.cloud",
+        "N8N_API_KEY": "your-n8n-api-key-here"
+      }
+    },
+    "google-drive": {
+      "_description": "Google Drive MCP - Access Google Docs, Sheets, Slides",
+      "_setup": "Follow OAuth setup at https://github.com/isaacphi/mcp-gdrive",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@isaacphi/mcp-gdrive"
+      ],
+      "env": {
+        "CLIENT_ID": "your-google-client-id.apps.googleusercontent.com",
+        "CLIENT_SECRET": "your-google-client-secret",
+        "GDRIVE_CREDS_DIR": "/Users/YOUR_USERNAME/.config/mcp-gdrive"
+      }
+    },
+    "slack": {
+      "_description": "Slack MCP - Search messages, read channels, post messages",
+      "_setup": "Create Slack App at https://api.slack.com/apps and get Bot Token",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-your-slack-bot-token-here"
+      }
+    },
+    "gong": {
+      "_description": "Gong MCP - Sales call analysis and transcript search",
+      "_setup": "Get Gong API credentials from your Gong admin - requires access key and secret",
+      "command": "node",
+      "args": [
+        "/Users/YOUR_USERNAME/.config/claude-code/mcp-servers/gong/server.js"
+      ],
+      "env": {
+        "GONG_ACCESS_KEY": "YOUR_GONG_ACCESS_KEY",
+        "GONG_ACCESS_KEY_SECRET": "YOUR_GONG_ACCESS_KEY_SECRET_JWT",
+        "GONG_BASE_URL": "https://api.gong.io"
+      }
+    },
+    "snowflake": {
+      "_description": "Snowflake MCP - Data warehouse queries and analytics",
+      "_setup": "Configure Snowflake credentials - requires private key authentication",
+      "_option_1": "Use script wrapper (recommended for complex env setup)",
+      "command": "/Users/YOUR_USERNAME/path/to/run_snowflake_mcp.sh",
+      "args": [],
+      "_option_2": "Or use uvx directly with environment variables",
+      "_command_alt": "uvx",
+      "_args_alt": ["--from", "mcp-snowflake-server", "mcp_snowflake_server"],
+      "_env_alt": {
+        "SNOWFLAKE_ACCOUNT": "YOUR_ACCOUNT_IDENTIFIER",
+        "SNOWFLAKE_USER": "your.email@company.com",
+        "SNOWFLAKE_PRIVATE_KEY_FILE": "/path/to/.snowflake/snowflake_key.p8",
+        "SNOWFLAKE_WAREHOUSE": "YOUR_WAREHOUSE",
+        "SNOWFLAKE_DATABASE": "YOUR_DATABASE",
+        "SNOWFLAKE_SCHEMA": "PUBLIC",
+        "SNOWFLAKE_ROLE": "YOUR_ROLE"
+      }
+    }
+  },
+  "_performance_tips": [
+    "MCP servers add latency - only enable what you need",
+    "Use /toggle-mcp to quickly enable/disable servers",
+    "Disable all for fastest responses: /toggle-mcp off",
+    "Minimal setup for core PM work: atlassian + gong"
+  ],
+  "_optional_servers": [
+    "You can remove any MCP servers you don't need from this config",
+    "Each server adds startup time and potential latency",
+    "Start with just what you need and add more later"
+  ]
+}

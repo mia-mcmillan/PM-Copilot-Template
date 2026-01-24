@@ -1,0 +1,183 @@
+# PM Copilot - Git Ignore
+
+# Sensitive Data
+*.env
+*.env.local
+.env
+credentials.json
+secrets.json
+api-keys.txt
+*.pem
+*.key
+
+# MCP Configuration (contains API keys)
+.mcp.json
+.claude/mcp.json
+.vscode/mcp.json
+claude.json
+claude.json-*
+*.json-cleaned
+
+# Jira/Atlassian Credentials
+.jira-credentials
+jira-config.json
+atlassian-token.txt
+
+# Salesforce Credentials
+salesforce-credentials.json
+sf-credentials.txt
+
+# n8n Workflows with Credentials
+# (keep workflow JSON but ensure no embedded credentials)
+
+# Cleanup and backup files
+*-backup.md
+*-cleanup-*.md
+*-diff-*.md
+
+# Personal Notes
+**/private/
+**/personal-notes/
+**/x-internal/
+PRIVATE-*.md
+
+# Customer Data (PII)
+**/customer-data/
+customer-emails.csv
+pii-data.json
+
+# Obsidian Cache & Config
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+.obsidian-backup/
+*.base
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node/NPM (if using any scripts)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python (if using scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Exports (may contain sensitive data)
+exports/**/raw-data/
+exports/**/*-export-*.csv
+exports/**/*-confidential*.json
+
+# Keep structure but not raw exports
+!exports/.gitkeep
+
+# Large Data Files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.sql
+*.sqlite
+*.db
+
+# Backup Files
+*.bak
+*.backup
+*-backup-*.md
+backup-*/
+
+# Draft Documents (keep if you want version control)
+# Uncomment if you want to exclude drafts:
+# **/drafts/
+# DRAFT-*.md
+
+# Meeting Recordings or Large Media
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+*.m4a
+
+# Keep Important Files
+!CLAUDE.md
+!README.md
+!.claude/
+!templates/
+!dashboards/
+
+# Optional: Exclude certain JPD exports if they contain sensitive data
+# Uncomment if needed:
+# opportunities/**/JPD-EXPORT-*.csv
+.snowflake/
+
+# AWS and Secrets Management
+# AWS CLI credentials are stored in ~/.aws/ (not in repo)
+# But ignore any local AWS config files if accidentally created here
+.aws/
+aws-credentials.txt
+aws-config.txt
+
+# Scripts folder
+scripts/
+
+# Script outputs and logs (if any)
+scripts/*.log
+scripts/secrets-output.txt
